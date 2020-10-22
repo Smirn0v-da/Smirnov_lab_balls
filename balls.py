@@ -29,6 +29,18 @@ def ball_move():
     global x, y, Vx, Vy, r
     x += Vx
     y += Vy
+    if x - r <= 50:
+        Vx = -Vx
+        x =  50 + r
+    if x + r >= 750:
+        Vx = -Vx
+        x = 750 - r
+    if y - r <= 50:
+        Vy = -Vy
+        y =  50 + r
+    if y + r >= 550:
+        Vy = -Vy
+        y = 550 - r   
     screen.fill(BLACK)
     circle(screen, color, (x, y), r)
 
